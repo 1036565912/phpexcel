@@ -50,7 +50,7 @@ class IndexController extends Controller
             'AL','AM','AN','AO'
         ];
 
-        //处理表头标题  这里是合并行的单元格  
+        //处理表头标题  这里是合并行的单元格
         $excel->getActiveSheet()->mergeCells('A1:'.$cellKey[count($cellKey)-1].'1'); //合并单元格
         $excel->setActiveSheetIndex(0)->setCellValue('A1','员工考勤记录表'); //设置第一个单元格的内容
         $excel->getActiveSheet()->getRowDimension('1')->setRowHeight(30); //设置特定行的高度的为30
@@ -115,7 +115,7 @@ class IndexController extends Controller
         $excel->setActiveSheetIndex(0)->setCellValue('AH2','月统计考勤情况'); //合并单元格
 
 
-        //设置斜线
+        //单元格设置斜线
         $excel->getActiveSheet()->getStyle('B3')->getBorders()->setDiagonalDirection(\PHPExcel_Style_Borders::DIAGONAL_DOWN );
         $excel->getActiveSheet()->getStyle('B3')->getBorders()->getDiagonal()-> setBorderStyle(\PHPExcel_Style_Border::BORDER_THIN);
 
